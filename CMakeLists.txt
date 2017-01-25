@@ -2,6 +2,11 @@
 # Copyright (C) Electronic Arts Inc.  All rights reserved.
 #-------------------------------------------------------------------------------------------
 cmake_minimum_required(VERSION 3.1)
+
+INCLUDE(${CMAKE_SOURCE_DIR}/Local/Packages/Engine.CMake.Scripts/ModuleMethods.cmake)
+
+InitModule()
+
 project(EASTL)
 
 #-------------------------------------------------------------------------------------------
@@ -43,8 +48,8 @@ add_definitions(-DEASTL_OPENSOURCE=1)
 # Library definition
 #-------------------------------------------------------------------------------------------
 file(GLOB EASTL_SOURCES "source/*.cpp" "include/EASTL/*.h")
-add_library(EASTL ${EASTL_SOURCES})
-include_directories("include")
+AddLibrary(EASTL ${EASTL_SOURCES})
+
 
 #-------------------------------------------------------------------------------------------
 # Compiler Flags
@@ -61,16 +66,17 @@ endif()
 #-------------------------------------------------------------------------------------------
 # Include dirs
 #-------------------------------------------------------------------------------------------
-target_include_directories(EASTL PUBLIC include)
-
+AddAdditionalInclude(EASTL PUBLIC include)
 #-------------------------------------------------------------------------------------------
 # Libraries
 #-------------------------------------------------------------------------------------------
-target_link_libraries(EASTL EABase)
+AddDependency(EASTL EABase)
 
 #-------------------------------------------------------------------------------------------
 # Installation
 #-------------------------------------------------------------------------------------------
-install(TARGETS EASTL DESTINATION lib)
-install(DIRECTORY include/EASTL DESTINATION include)
-install(DIRECTORY test/packages/EABase/include/Common/EABase DESTINATION include)
+#install(TARGETS EASTL DESTINATION lib)
+#install(DIRECTORY include/EASTL DESTINATION include)
+#install(DIRECTORY test/packages/EABase/include/Common/EABase DESTINATION include)
+
+SetSolutionFolder(EASTL ${ENGINE_LIBRARY_SOLUTION_FOLDER}/External)
