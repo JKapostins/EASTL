@@ -281,7 +281,7 @@ namespace eastl
 #endif
 
 #if defined(GNARLY_SHARED)
-#if defined(GNARLY_EXPORT)
+#if defined(EASTL_EXPORT)
 #define EASTL_API __declspec(dllexport)
 #else
 #define EASTL_API __declspec(dllimport)
