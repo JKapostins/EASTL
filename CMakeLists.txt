@@ -49,7 +49,11 @@ add_definitions(-DEASTL_OPENSOURCE=1)
 #-------------------------------------------------------------------------------------------
 file(GLOB EASTL_SOURCES "source/*.cpp" "include/EASTL/*.h")
 AddLibrary(EASTL ${EASTL_SOURCES})
-
+IF(BUILD_SHARED_LIBS)
+	IF(CMAKE_PASS_TWO)
+		ADD_DEFINITIONS(-DEASTL_DLL)
+	ENDIF()
+ENDIF()
 
 #-------------------------------------------------------------------------------------------
 # Compiler Flags
