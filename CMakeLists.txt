@@ -7,7 +7,7 @@ INCLUDE(${CMAKE_SOURCE_DIR}/Local/Packages/Engine.CMake.Scripts/ModuleMethods.cm
 
 InitModule()
 
-project(EASTL)
+AddProject(EASTL)
 
 #-------------------------------------------------------------------------------------------
 # Options
