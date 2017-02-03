@@ -49,8 +49,7 @@ add_definitions(-DEASTL_OPENSOURCE=1)
 #-------------------------------------------------------------------------------------------
 file(GLOB EASTL_SOURCES "source/*.cpp" "include/EASTL/*.h")
 AddLibrary(EASTL ${EASTL_SOURCES})
-AddSharedDefinition(EASTL_DLL)
-AddSharedDefinition(EASTL_EXPORT)
+AddSharedDefinitions(EASTL EASTL_DLL EASTL_EXPORT)
 
 #-------------------------------------------------------------------------------------------
 # Compiler Flags
