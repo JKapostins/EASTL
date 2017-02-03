@@ -31,6 +31,7 @@
 #if defined(_MSC_VER)
 	#pragma warning(push)
 	#pragma warning(disable: 4275) // non dll-interface class used as base for DLL-interface classkey 'identifier'
+	#pragma warning(disable: 4251) // struct needs to have dll-interface to be used by clients of class 'eastl::fixed_allocator_with_overflow
 #endif
 
 #if defined(EA_PRAGMA_ONCE_SUPPORTED)
