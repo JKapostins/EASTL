@@ -96,7 +96,7 @@ namespace engine
 		static ARENA_ALLOCATOR_API eastl_allocator_deallocate_func deallocateFunc;
 		static ARENA_ALLOCATOR_API eastl_allocator_findArena_func findArenaFunc;
 
-#if !defined(GNARLY_RELEASE) //GNARLY_TODO: Add macros for release / debug
+#if !defined(GNARLY_CONFIG_RELEASE)
 		static ARENA_ALLOCATOR_API eastl_allocator_verifyArenas_func verifyArenasFunc;
 #endif
 		static bool s_allocationMade;
