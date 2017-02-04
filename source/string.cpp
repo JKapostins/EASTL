@@ -2,7 +2,6 @@
 // Copyright (c) Electronic Arts Inc. All rights reserved.
 ///////////////////////////////////////////////////////////////////////////////
 
-
 #include <EASTL/internal/config.h>
 #include <EASTL/string.h>
 #include <EABase/eabase.h>

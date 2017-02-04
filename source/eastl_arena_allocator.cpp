@@ -50,7 +50,7 @@ namespace eastl_arena_allocator_functions_default
 		return nullptr;
 	}
 
-#if !defined(GNARLY_RELEASE)
+#if !defined(GNARLY_CONFIG_RELEASE)
 	void verifyArenas(engine::eastl_arena_allocator* /*allocator*/, const engine::eastl_arena_allocator& /*x*/)
 	{
 	}
@@ -60,7 +60,7 @@ namespace eastl_arena_allocator_functions_default
 
 namespace engine
 {
-#if !defined(GNARLY_RELEASE)
+#if !defined(GNARLY_CONFIG_RELEASE)
 	eastl_arena_allocator::eastl_allocator_verifyArenas_func	eastl_arena_allocator::verifyArenasFunc = eastl_arena_allocator_functions_default::verifyArenas;
 #endif
 	eastl_arena_allocator::eastl_allocator_allocate1_func		eastl_arena_allocator::allocate1Func = eastl_arena_allocator_functions_default::allocate;
@@ -91,7 +91,7 @@ namespace engine
 		return findArenaFunc(x);
 	}
 
-#if !defined(GNARLY_RELEASE)
+#if !defined(GNARLY_CONFIG_RELEASE)
 	void eastl_arena_allocator::verifyArenas(const eastl_arena_allocator& x)
 	{
 		verifyArenasFunc(this, x);
@@ -105,9 +105,10 @@ namespace engine
 		allocate2Func = f2;
 		deallocateFunc = f3;
 		findArenaFunc = f4;
-#if !defined(GNARLY_RELEASE)
+#if !defined(GNARLY_CONFIG_RELEASE)
 		verifyArenasFunc = f5;
 #endif
+		EA_UNUSED(f5);
 	}
 }
 
