@@ -48,7 +48,9 @@ add_definitions(-DEASTL_OPENSOURCE=1)
 # Library definition
 #-------------------------------------------------------------------------------------------
 file(GLOB EASTL_SOURCES "source/*.cpp" "include/EASTL/*.h")
-AddLibrary(EASTL ${EASTL_SOURCES})
+file(GLOB INTERNAL_HEADERS "include/EASTL/internal/*.h")
+FILE(GLOB BONUS_HEADERS "include/EASTL/bonus/*.h")
+AddLibrary(EASTL ${EASTL_SOURCES} ${INTERNAL_HEADERS} ${BONUS_HEADERS})
 AddSharedDefinitions(EASTL EASTL_DLL EASTL_EXPORT)
 
 #-------------------------------------------------------------------------------------------
@@ -79,4 +81,6 @@ AddDependency(EASTL EABase)
 #install(DIRECTORY include/EASTL DESTINATION include)
 #install(DIRECTORY test/packages/EABase/include/Common/EABase DESTINATION include)
 
+SOURCE_GROUP("Header Files\\internal" FILES ${INTERNAL_HEADERS})
+SOURCE_GROUP("Header Files\\bonus" FILES ${BONUS_HEADERS})
 SetSolutionFolder(EASTL ${ENGINE_LIBRARY_SOLUTION_FOLDER}/External)
