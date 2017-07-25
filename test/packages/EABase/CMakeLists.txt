@@ -28,4 +28,4 @@ target_include_directories(EABase INTERFACE include/Common)
 #       libaries show up in IDEs
 # http://stackoverflow.com/questions/27039019/how-to-have-cmake-show-headers-that-are-not-part-of-any-binary-target-in-the-ide/29218394#29218394
 add_custom_target(EABase_ide ALL SOURCES ${EABASE_SOURCES})
-SetSolutionFolder(EABase_ide ${ENGINE_LIBRARY_SOLUTION_FOLDER}/External)
+SetSolutionFolder(EABase_ide ${EXTERNAL_LIBRARY_SOLUTION_FOLDER})

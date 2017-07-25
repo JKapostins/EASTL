@@ -83,4 +83,4 @@ AddDependency(EASTL EABase)
 
 SOURCE_GROUP("Header Files\\internal" FILES ${INTERNAL_HEADERS})
 SOURCE_GROUP("Header Files\\bonus" FILES ${BONUS_HEADERS})
-SetSolutionFolder(EASTL ${ENGINE_LIBRARY_SOLUTION_FOLDER}/External)
+SetSolutionFolder(EASTL ${EXTERNAL_LIBRARY_SOLUTION_FOLDER})
