@@ -91,12 +91,14 @@ namespace engine
 		return findArenaFunc(x);
 	}
 
-#if !defined(GNARLY_CONFIG_RELEASE)
 	void eastl_arena_allocator::verifyArenas(const eastl_arena_allocator& x)
 	{
+#if !defined(GNARLY_CONFIG_RELEASE)
 		verifyArenasFunc(this, x);
-	}
+#else
+		EA_UNUSED(x);
 #endif
+	}
 
 	void eastl_arena_allocator::initializeAllocationFunctions(eastl_allocator_allocate1_func f1, eastl_allocator_allocate2_func f2, eastl_allocator_deallocate_func f3, eastl_allocator_findArena_func f4, eastl_allocator_verifyArenas_func f5)
 	{
